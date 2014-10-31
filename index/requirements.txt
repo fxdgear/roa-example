@@ -1,0 +1,5 @@
+Django==1.7.1
+djangorestframework==2.4.3
+-e git+https://github.com/charles-vdulac/django-roa.git@master#egg=django_roa
+psycopg2
+requests

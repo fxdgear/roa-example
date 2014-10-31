@@ -1,0 +1,23 @@
+hub:
+  build: ./hub
+  command: python hub/manage.py runserver 0.0.0.0:8000
+  links:
+   - hubdb
+  ports:
+   - "8000:8000"
+  volumes:
+    - ./hub:/code
+index:
+  build: ./index
+  command: python index/manage.py runserver 0.0.0.0:8000
+  links:
+   - indexdb
+  ports:
+   - "8001:8000"
+  volumes:
+    - ./index:/code
+
+hubdb:
+  image: postgres
+indexdb:
+  image: postgres
